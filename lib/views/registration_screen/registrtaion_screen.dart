@@ -103,7 +103,7 @@ class RegistrationScreen extends StatelessWidget {
                         color: Colors.grey,
                       )),
                   validator: (value) {
-                    if (value != null && value.length >= 6) {
+                    if (value != null && value.length >= 5) {
                       return null;
                     } else {
                       return "Enter a valid Password with aleast 6 chars";

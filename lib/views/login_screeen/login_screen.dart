@@ -1,5 +1,7 @@
+import 'package:firebase_sample_april/controller/login_controller.dart';
 import 'package:firebase_sample_april/views/registration_screen/registrtaion_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -161,7 +163,12 @@ class LoginScreen extends StatelessWidget {
                   onTap: () {
                     // Todo : write code  to navigate to home screen on successful Login with registered credentials
 
-                    if (formKey.currentState!.validate()) {}
+                    if (formKey.currentState!.validate()) {
+                      context.read<LoginScreenController>().onLogin(
+                          email: emailController.text,
+                          pass: passController.text,
+                          context: context);
+                    }
                   },
                   child: Container(
                     padding: EdgeInsets.symmetric(vertical: 10),
